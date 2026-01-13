@@ -1,0 +1,50 @@
+# Build directories
+build/
+cmake-build-*/
+
+# Executables
+*.out
+main_app
+test_*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+.directory
+*.nfs*
+*~
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+Testing/
+
+# Compiler artifacts
+*.o
+*.a
+*.so
+*.dll
+*.dylib
+*.exe
+
+# Logs
+*.log
+*.gcda
+*.gcno
+
+# Qt stuff (если будешь использовать)
+*.moc
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
