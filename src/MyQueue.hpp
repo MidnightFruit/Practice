@@ -2,7 +2,6 @@
 #include <memory>
 #include <ostream>
 #include <stdexcept>
-#include <strstream>
 #include <utility>
 
 
