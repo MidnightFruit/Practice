@@ -15,9 +15,9 @@ target_link_libraries(main_app PRIVATE data_struct)
 
 enable_testing()
 
-#add_executable(test_list tests/test_list.cpp)
-#target_link_libraries(test_list PRIVATE data_structures)
-#add_test(NAME test_list COMMAND test_list)
+add_executable(test_hash_table tests/test_hash_table.cpp)
+target_link_libraries(test_hash_table PRIVATE data_struct)
+add_test(NAME test_hash_table COMMAND test_hash_table)
 
 #add_executable(test_stack tests/test_stack.cpp)
 #target_link_libraries(test_stack PRIVATE data_structures)

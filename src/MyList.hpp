@@ -14,6 +14,7 @@ private:
         Node(const T& value, std::unique_ptr<Node> next_node = nullptr) : data(value), next(std::move(next_node)){}
     };
 
+
     
     std::unique_ptr<Node> head; 
     size_t m_size = 0;
@@ -96,6 +97,7 @@ public:
         return MyListIterator(nullptr);
     }
 
+    bool remove(const T& value);
 };
 
 template <typename T>
@@ -168,3 +170,36 @@ inline void MyList<T>::clear()
     m_size = 0;
 }
 
+template <typename T>
+inline bool MyList<T>::remove(const T &value)
+{
+    if (!head)
+    {
+        return false;
+    }
+
+    if (head->data == value)
+    {
+        head = std::move(head->next);
+        m_size--;
+        return true;
+    }
+    
+    auto cur = head->next.get();
+    decltype(head)* prev_node = &head->next;
+
+    while (cur)
+    {
+        if (cur->data == value)
+        {
+            *prev_node = std::move(cur->next);
+            m_size--;
+            return true;
+        }
+        
+        prev_node = &(cur->next);
+        cur = cur->next.get();
+    }
+    
+    return false;
+}
